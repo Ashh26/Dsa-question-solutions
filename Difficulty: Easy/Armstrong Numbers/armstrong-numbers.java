@@ -54,7 +54,11 @@ class Solution {
             
         }
         
-       return n==reverse ? true:false;
+       if(n==reverse){
+           return true;
+       }else{
+           return false;
+       }
         
         
     }
