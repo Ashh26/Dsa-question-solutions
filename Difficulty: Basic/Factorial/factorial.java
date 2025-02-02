@@ -20,15 +20,17 @@ class GFG {
 
 class Solution {
     static int factorial(int n) {
-        // if(n<=1)
-        //     return 1;
-        // return n*factorial(n-1);
-            int fact = 1;
-        for(int i=n;i>=1;i--){
-            fact = fact*i;
-        }
+        if(n<=1)
+            return 1;
+        return n*factorial(n-1);
         
-        return fact;
+        
+        //     int fact = 1;
+        // for(int i=n;i>=1;i--){
+        //     fact = fact*i;
+        // }
+        
+        // return fact;
         
     }
 }
