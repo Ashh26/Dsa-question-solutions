@@ -40,7 +40,7 @@ class Main {
 
 class Solution {
     int maxSubarraySum(int[] arr) {
-        int maxEnding = arr[0];
+                int maxEnding = arr[0];
         int result = arr[0];
         
         
