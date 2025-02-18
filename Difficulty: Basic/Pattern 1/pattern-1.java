@@ -19,7 +19,6 @@ System.out.println("~");
 }
 // } Driver Code Ends
 
-
 class Solution {
 
     void printSquare(int n) {
