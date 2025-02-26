@@ -24,7 +24,9 @@ class Solution {
                     flag = 1;
                 }
             }
-            if(flag==0){
+            if(flag==0)  // checking if the value of flag is 0 than our array is sorted. 
+                        // or already sorted.
+            {
                 break;
             }
         }
