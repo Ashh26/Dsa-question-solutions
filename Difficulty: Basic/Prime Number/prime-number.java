@@ -7,19 +7,17 @@ import java.util.*;
 class GFG {
     public static void main(String args[]) throws IOException {
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(read.readLine()); // Read number of test cases
+        int t = Integer.parseInt(read.readLine());
 
         while (t-- > 0) {
-            int n =
-                Integer.parseInt(read.readLine()); // Read the number to check primality
+            int n = Integer.parseInt(read.readLine());
             Solution ob = new Solution();
             if (ob.isPrime(n)) {
-                System.out.println("true"); // If the number is prime, print "true"
+                System.out.println("true");
             } else {
-                System.out.println(
-                    "false"); // If the number is not prime, print "false"
+                System.out.println("false");
             }
-            System.out.println("~"); // If the number is not prime, print "false"
+            System.out.println("~");
         }
     }
 }
@@ -30,16 +28,13 @@ class GFG {
 class Solution {
     static boolean isPrime(int n) {
         // code here
-        
-        if(n==1) return false;
-        
+        if(n<=1) return false;
+        if(n==2) return true;
         for(int i=2;i<n;i++){
             if(n%i==0){
                 return false;
             }
         }
-        
         return true;
-        
     }
 }
