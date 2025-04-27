@@ -29,11 +29,6 @@ class GFG {
 class Solution {
     public static int seriesSum(int n) {
         // code here
-        if(n==0 || n==1) return n;
-        int ans=0;
-        for(int i=1;i<=n;i++){
-            ans=ans+i;
-        }
-        return ans;
+        return n*(n+1)/2;
     }
 }
