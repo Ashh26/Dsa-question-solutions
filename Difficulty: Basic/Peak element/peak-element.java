@@ -52,19 +52,21 @@ class Solution {
 
     public int peakElement(int[] arr) {
         // code here
+        int low = 0, high = arr.length - 1;
         
-        
-        if(arr.length==1) return 0;
-        
-        if(arr[0]>arr[1]) return 0;
-        
-        if(arr[arr.length-1]>arr[arr.length-2]) return arr.length-1;
-        
-        for(int i=1;i<arr.length-1;i++){
-            if(arr[i]>arr[i+1] && arr[i]>arr[i-1]){
-                return i;
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+            
+            if (arr[mid] < arr[mid + 1]) {
+                // Peak lies on the right side
+                low = mid + 1;
+            } else {
+                // Peak lies on the left side or at mid
+                high = mid;
             }
         }
-        return -1;
+        
+        return low; // or high (both are same here)
+        
     }
 }
