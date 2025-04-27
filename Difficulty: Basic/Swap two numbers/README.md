@@ -1,4 +1,4 @@
-<h2><a href="https://www.geeksforgeeks.org/problems/swap-two-numbers3844/0">Swap two numbers</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 20px;">You are given two numbers a and b. Your task is to swap the given two numbers.</span></p>
+<h2><a href="https://www.geeksforgeeks.org/problems/swap-two-numbers3844/1">Swap two numbers</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO"><p><span style="font-size: 20px;">You are given two numbers a and b. Your task is to swap the given two numbers.</span></p>
 <p><span style="font-size: 20px;">Note:&nbsp;</span><span style="font-size: 20px;">Try to do it without a temporary variable.</span></p>
 <p><span style="font-size: 18px;"><strong>Examples:</strong></span></p>
 <pre><span style="font-size: 18px;"><strong>Input: </strong>a = 13, b = 9
