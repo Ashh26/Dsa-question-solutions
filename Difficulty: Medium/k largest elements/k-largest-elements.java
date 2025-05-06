@@ -6,30 +6,24 @@ import java.util.HashMap;
 
 
 // } Driver Code Ends
+
 class Solution {
     public ArrayList<Integer> kLargest(int[] arr, int k) {
-       PriorityQueue<Integer> pq = new PriorityQueue<>(k);
-       
-       
-       for(int i=0;i<k;i++){
-           pq.add(arr[i]);
-       }
-       
-       for(int i=k;i<arr.length;i++){
-           if(pq.peek()<arr[i]){
-               pq.poll();
-               pq.add(arr[i]);
-           }
-       }
-       
-       ArrayList<Integer> result = new ArrayList<>();
-       while(!pq.isEmpty()){
-           result.add(pq.poll());
-       }
-       Collections.reverse(result);
-       return result;
+        // Your code here
+        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        for(int e:arr){
+            pq.add(e);
+            
+            if(pq.size()>k){
+                pq.poll();
+            }
+        }
+        ArrayList<Integer> list = new ArrayList<>(pq);
+        list.sort(Collections.reverseOrder());
+        return list;
     }
 }
+
 
 
 //{ Driver Code Starts.
