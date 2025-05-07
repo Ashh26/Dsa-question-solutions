@@ -62,74 +62,50 @@ public class Main {
 
 
 // User function Template for Java
-// class Node
-// {
-//     int data;
-//     Node next;
+/*class Node
+{
+    int data;
+    Node next;
 
-//     Node(int x)
-//     {
-//         data = x;
-//         next = null;
-//     }
-// }
-
+    Node(int key)
+    {
+        data = key;
+        next = null;
+    }
+}
+*/
 
 // arr is an array of Nodes of the heads of linked lists
 
 class Solution {
-    // function for merge only 2 lists
-    static Node mergeTwo(Node head1,Node head2){
-        Node dummy = new Node(-1);
-        Node curr = dummy;
-        
-        // iterate through both linked lists
-        while(head1!=null && head2!=null){
-            // add the smaller note to the merged list
-            if(head1.data<=head2.data){
-                curr.next=head1;
-                head1=head1.next;
-            }else{
-                curr.next = head2;
-                head2 = head2.next;
-            }
-            curr = curr.next;
-        }
-        
-        // if any list is left, append it to the merged list
-        if(head1!=null){
-            curr.next=head1;
-        }else{
-            curr.next = head2;
-        }
-        
-        // return the merged list starting form the next of the dummy node
-        return dummy.next;
-    }
-    
-    
     // Function to merge K sorted linked list.
     Node mergeKLists(List<Node> arr) {
-        // initialize result as empty
-       Node result = null;
-       
-       // one by one merge all lists with result and keep updating result
-       for(Node node:arr){
-           result = mergeTwo(result,node);
-       }
-       return result;
-       
-    }
-    
-    static void printList(Node node){
-        while(node!=null){
-            System.out.println(node.data+" ");
-            node = node.next;
+        // Add your code here.
+         PriorityQueue<Node> minHeap = new PriorityQueue<>(Comparator.comparingInt(a -> a.data));
+
+        // Add the head of each linked list to the heap
+        for (Node head : arr) {
+            if (head != null) {
+                minHeap.add(head);
+            }
         }
+
+        // Dummy node to help build the result list
+        Node dummy = new Node(0);
+        Node tail = dummy;
+
+        // Merge nodes one by one
+        while (!minHeap.isEmpty()) {
+            Node minNode = minHeap.poll();
+            tail.next = minNode;
+            tail = tail.next;
+
+            // If there is a next node, push it into the heap
+            if (minNode.next != null) {
+                minHeap.add(minNode.next);
+            }
+        }
+
+        return dummy.next;
     }
 }
-
-
-
-
-
